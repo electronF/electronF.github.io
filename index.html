@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovide Kuichua — PhD Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #141720;
+      --border: #1f2433;
+      --accent: #c8a96e;
+      --accent-dim: rgba(200, 169, 110, 0.15);
+      --text: #e8e4dc;
+      --text-dim: #8a8a9a;
+      --text-muted: #4a4a5a;
+      --green: #5c9e7a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 4rem;
+      background: rgba(13, 15, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem 4rem 6rem;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-dim);
+      max-width: 38ch;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0d0f14;
+      font-weight: 400;
+    }
+
+    .btn-primary:hover {
+      background: #d4ba82;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── PHOTO ── */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-top: 6rem;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: -5%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 340px;
+      height: 420px;
+    }
+
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px solid var(--accent);
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: grayscale(20%) contrast(1.05);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+      color: var(--text-muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+
+    .photo-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.3;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 3rem;
+      line-height: 1.2;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      border-top: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-dim);
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stat-block {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── PUBLICATIONS ── */
+    #publications {
+      border-top: 1px solid var(--border);
+    }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pub-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 2rem 2.5rem;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pub-card:hover {
+      background: rgba(200,169,110,0.04);
+      border-color: var(--accent);
+    }
+
+    .pub-venue {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .pub-badge {
+      background: var(--accent-dim);
+      color: var(--accent);
+      padding: 0.15rem 0.6rem;
+      border-radius: 2px;
+      font-size: 0.65rem;
+    }
+
+    .pub-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+
+    .pub-authors {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .pub-authors strong {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .pub-abstract {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .pub-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ── RESEARCH INTERESTS ── */
+    #research {
+      border-top: 1px solid var(--border);
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .interest-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      transition: border-color 0.2s;
+    }
+
+    .interest-card:hover { border-color: var(--text-muted); }
+
+    .interest-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .interest-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .interest-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience {
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      padding-left: 3rem;
+      padding-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 0.5rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      background: var(--bg);
+    }
+
+    .timeline-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-role {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-org {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 60ch;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    #contact h2 { margin-bottom: 1rem; }
+
+    .contact-sub {
+      color: var(--text-dim);
+      max-width: 45ch;
+      margin: 0 auto 3rem;
+      font-size: 1rem;
+    }
+
+    .contact-email {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(200,169,110,0.3);
+      padding-bottom: 0.3rem;
+      transition: border-color 0.2s;
+    }
+
+    .contact-email:hover { border-color: var(--accent); }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.2rem;
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left > * {
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-tag     { animation-delay: 0.1s; }
+    .hero-left h1 { animation-delay: 0.25s; }
+    .hero-subtitle{ animation-delay: 0.4s; }
+    .hero-links   { animation-delay: 0.55s; }
+
+    .hero-right {
+      animation: fadeUp 0.9s 0.3s ease both;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 8rem 2rem 2rem; }
+      .hero-right { padding: 2rem; justify-content: flex-start; }
+      .photo-frame { width: 240px; height: 300px; }
+
+      section { padding: 4rem 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">OK — Researcher</span>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#research">Recherche</a></li>
+    <li><a href="#experience">Parcours</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="max-width:100%; padding:0;">
+  <div class="hero-left">
+    <p class="hero-tag">Doctorant · Polytechnique Montréal</p>
+    <h1>Ovide<br /><em>Kuichua</em></h1>
+    <p class="hero-subtitle">
+      Chercheur en apprentissage automatique appliqué à l'éducation. 
+      Je conçois des systèmes d'évaluation automatique qui restent centrés 
+      sur l'enseignant, efficaces et déployables à grande échelle.
+    </p>
+    <div class="hero-links">
+      <a href="#publications" class="btn btn-primary">Voir mes publications</a>
+      <a href="#contact" class="btn btn-ghost">Me contacter</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-frame">
+      <!-- 
+        POUR AJOUTER TA PHOTO :
+        Remplace ce bloc par :
+        <img src="photo.jpg" alt="Ovide Kuichua" />
+        Et place photo.jpg dans le même dossier que index.html
+      -->
+      <img src="image_3_.png" alt="Ovide Kuichua"
+           onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M4 20c0-4 3.6-7 8-7s8 3 8 7\'/></svg><span>photo.jpg</span></div>'" />
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">01 — À propos</p>
+  <h2>Machine Learning<br />pour l'éducation</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Je suis doctorant au Département de Génie Informatique et Génie Logiciel 
+        de <strong>Polytechnique Montréal</strong>, sous la supervision du Prof. Michel Desmarais 
+        et du Prof. Chahé Nerguizian. Mes travaux portent sur l'évaluation automatique 
+        de réponses courtes (ASAG) à l'aide de grands modèles de langage.
+      </p>
+      <p>
+        Mon approche combine la puissance de raisonnement des LLMs modernes 
+        (Claude, GPT-4, Gemini) avec des méthodes statistiques légères — régression 
+        gaussienne, échantillonnage informatif — pour s'adapter aux préférences 
+        spécifiques de chaque enseignant avec un minimum d'exemples annotés.
+      </p>
+      <p>
+        Avant mon doctorat, j'ai travaillé comme ingénieur R&D chez Eduplan Solutions 
+        et comme chargé de cours à l'Université des Montagnes au Cameroun. 
+        Je suis aussi le membre fondateur du chapitre camerounais de CodeChef.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-block">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Articles acceptés<br/>en conférence (2026)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Années d'expérience<br/>en développement logiciel</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">3</div>
+        <div class="stat-label">LLMs évalués<br/>(GPT-4o, Claude, Gemini)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <p class="section-label">02 — Publications</p>
+  <h2>Travaux de recherche</h2>
+  <div class="pub-list">
+
+    <!-- PAPER 1 : UMAP -->
+    <div class="pub-card">
+      <div class="pub-venue">
+        UMAP '26 — Gothenburg, Suède, Juin 2026
+        <span class="pub-badge">Accepté</span>
+      </div>
+      <div class="pub-title">
+        Instructor-Centered Per-Question Adaptation for Short Answer Grading 
+        Using LLM Scores and Informative Sampling
+      </div>
+      <div class="pub-authors">
+        <strong>Ovide Kuichua</strong>, Michel Desmarais, Arman Bakhtiari, Chahé Nerguizian
+      </div>
+      <div class="pub-abstract">
+        Approche d'évaluation automatique de réponses courtes combinant les LLMs 
+        (Claude 3.5 Sonnet, GPT-4o, Gemini 2.0 Flash) avec une régression gaussienne 
+        par question. Atteint un RMSE de 0,397 sur le benchmark Mohler — améliorant 
+        l'état de l'art de 45% — tout en nécessitant 4 à 5 fois moins d'exemples annotés 
+        que les méthodes de fine-tuning.
+      </div>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1145/3774935.3806189" target="_blank" class="pub-link">↗ DOI</a>
+        <a href="https://osf.io/cs3nv/overview?view_only=4756bae0cdd44190b2ac21cd90eb467e" target="_blank" class="pub-link">↗ Code & données</a>
+      </div>
+    </div>
+
+    <!-- PAPER 2 : L@S -->
+    <div class="pub-card">
+      <div class="pub-venue">
+        L@S '26 — Séoul, Corée du Sud, Juin–Juillet 2026
+        <span class="pub-badge">Accepté</span>
+      </div>
+      <div class="pub-title">
+        Uncertainty-Guided Sampling for LLM Calibration in Automated 
+        Short Answer Grading
+      </div>
+      <div class="pub-authors">
+        <strong>Ovide Kuichua</strong> et al.
+      </div>
+      <div class="pub-abstract">
+        Méthode d'échantillonnage en deux étapes guidée par l'incertitude du LLM 
+        pour sélectionner les exemples de calibration les plus informatifs. 
+        Amélioration de 30% du RMSE par rapport à l'état de l'art basé sur la 
+        similarité sémantique (0,501 vs 0,717), avec 33% à 67% moins d'exemples annotés.
+      </div>
+      <div class="pub-links">
+        <a href="https://osf.io/gwnfm/overview?view_only=a9f8153c8fe54a92b5c7608275e1fcbd" target="_blank" class="pub-link">↗ Code & données</a>
+      </div>
+    </div>
+
+    <!-- PAPER 3 : EDM 2025 -->
+    <div class="pub-card">
+      <div class="pub-venue">
+        EDM 2025 — Palerme, Italie, Juillet 2025
+      </div>
+      <div class="pub-title">
+        Short Answer Grading with Sentence Similarity and a Few Given Grades
+      </div>
+      <div class="pub-authors">
+        Michel Desmarais, Arman Bakhtiari, <strong>Ovide Kuichua</strong>, Samira Chiny Folefack Temfack, Chahé Nerguizian
+      </div>
+      <div class="pub-abstract">
+        Travail fondateur proposant la calibration par question via régression gaussienne 
+        sur des scores de similarité sémantique avec seulement 15 exemples par question. 
+        Publié à la 18e International Conference on Educational Data Mining.
+      </div>
+      <div class="pub-links">
+        <a href="https://educationaldatamining.org/EDM2025/proceedings/2025.EDM.short-papers.124/" target="_blank" class="pub-link">↗ Proceedings</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research">
+  <p class="section-label">03 — Intérêts de recherche</p>
+  <h2>Thèmes explorés</h2>
+  <div class="interests-grid">
+    <div class="interest-card">
+      <div class="interest-icon">🤖</div>
+      <div class="interest-title">LLMs & Éducation</div>
+      <div class="interest-desc">
+        Utilisation des grands modèles de langage pour automatiser l'évaluation 
+        tout en maintenant le contrôle pédagogique de l'enseignant.
+      </div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">📊</div>
+      <div class="interest-title">Apprentissage actif</div>
+      <div class="interest-desc">
+        Stratégies d'échantillonnage informatif pour maximiser la performance 
+        avec un minimum d'annotations humaines.
+      </div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🎯</div>
+      <div class="interest-title">Calibration statistique</div>
+      <div class="interest-desc">
+        Méthodes de régression non-paramétriques (noyaux gaussiens) pour 
+        adapter les sorties de modèles aux préférences individuelles.
+      </div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🌍</div>
+      <div class="interest-title">IA multilingue</div>
+      <div class="interest-desc">
+        Généralisation des systèmes éducatifs à travers les langues, 
+        domaines et niveaux scolaires (anglais, portugais, etc.).
+      </div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">👁</div>
+      <div class="interest-title">Human-in-the-Loop</div>
+      <div class="interest-desc">
+        Conception de systèmes IA qui augmentent l'enseignant plutôt 
+        que de le remplacer, en restant transparents et contrôlables.
+      </div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">⚡</div>
+      <div class="interest-title">ML appliqué</div>
+      <div class="interest-desc">
+        Ingénierie logicielle, développement mobile Flutter, 
+        Python et déploiement de solutions ML en production.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">04 — Parcours</p>
+  <h2>Expérience &<br />formation</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">2022 — Présent</div>
+      <div class="timeline-role">Doctorant en Génie Informatique</div>
+      <div class="timeline-org">Polytechnique Montréal — Montréal, Canada</div>
+      <div class="timeline-desc">
+        Recherche sur l'évaluation automatique de réponses courtes (ASAG) 
+        à l'aide de LLMs et de méthodes d'adaptation légères. 
+        Publications aux conférences UMAP, L@S et EDM.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Précédemment</div>
+      <div class="timeline-role">Ingénieur R&D</div>
+      <div class="timeline-org">Eduplan Solutions</div>
+      <div class="timeline-desc">
+        Développement de solutions logicielles innovantes, 
+        expertise en Python et machine learning appliqué.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Précédemment</div>
+      <div class="timeline-role">Chargé de cours</div>
+      <div class="timeline-org">Université des Montagnes — Cameroun</div>
+      <div class="timeline-desc">
+        Enseignement en informatique et développement logiciel 
+        à la prochaine génération d'ingénieurs.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Initiative</div>
+      <div class="timeline-role">Membre fondateur — Chapitre camerounais</div>
+      <div class="timeline-org">CodeChef Cameroun</div>
+      <div class="timeline-desc">
+        Fondation du chapitre camerounais de CodeChef, 
+        promotion de la programmation compétitive.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">05 — Contact</p>
+  <h2>Travaillons ensemble</h2>
+  <p class="contact-sub">
+    Pour toute collaboration de recherche, question sur mes travaux 
+    ou opportunité, n'hésitez pas à me contacter.
+  </p>
+  <a href="mailto:ovide.kuichua@polymtl.ca" class="contact-email">
+    ovide.kuichua@polymtl.ca
+  </a>
+  <div class="social-links">
+    <a href="https://linkedin.com/in/ovide-kuichua" target="_blank" class="social-link">LinkedIn</a>
+    <a href="https://www.researchgate.net/profile/Ovide-Kuichua" target="_blank" class="social-link">ResearchGate</a>
+    <a href="https://www.publications.polymtl.ca/view/person/Kuichua_Kamdem,_Ovide_Bertrand.html" target="_blank" class="social-link">PolyPublie</a>
+    <a href="https://osf.io/cs3nv/" target="_blank" class="social-link">OSF — Code</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Ovide Kuichua — Polytechnique Montréal</p>
+  <p>ovidekuichua.github.io</p>
+</footer>
+
+</body>
+</html>
