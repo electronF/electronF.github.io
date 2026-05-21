@@ -3,29 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Ovide Kuichua — Chercheur en intelligence artificielle | Consultant IA, LLM </title>
+  <title>Ovide Kuichua — Chercheur en IA | Consultant Intelligence Artificielle</title>
 
-  <!-- SEO de base -->
-  <meta name="description" content="Ovide Kuichua is an AI Research Scientist and PhD candidate at Polytechnique Montréal. Research on automated grading (ASAG), LLM calibration, clinical NLP and medical AI." />
-  <meta name="keywords" content="Ovide Kuichua, AI Research, LLM calibration, ASAG, automated grading, NLP, Polytechnique Montreal, Machine Learning, Medical AI, human-in-the-loop" />
+  <meta name="description" content="Ovide Kuichua est un chercheur en IA et doctorant à Polytechnique Montréal. Spécialiste calibration LLM, évaluation automatique (ASAG), NLP clinique, IA médicale. Consultant IA disponible." />
+  <meta name="keywords" content="Ovide Kuichua, chercheur IA, consultant IA, AI research scientist, calibration LLM, ASAG, NLP clinique, IA médicale, Polytechnique Montreal, machine learning, consultant intelligence artificielle, human-in-the-loop" />
   <meta name="author" content="Ovide Kuichua" />
-  <link rel="canonical" href="https://electronf.github.io" />
-  
-  <!-- Open Graph (LinkedIn, WhatsApp, Discord...) -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://electronf.github.io" />
-  <meta property="og:title"       content="Ovide Kuichua — AI Research Scientist" />
-  <meta property="og:description" content="PhD candidate at Polytechnique Montréal. Research on LLM calibration, automated short answer grading and medical AI." />
-  <meta property="og:image"       content="https://electronf.github.io/photo.jpg" />
-  
-  <!-- Twitter/X card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Ovide Kuichua" />
-  <meta name="twitter:description" content="PhD candidate at Polytechnique Montréal. Research on LLM calibration, automated short answer grading and medical AI." />
-  <meta name="twitter:image"       content="https://electronf.github.io/photo.jpg" />
+  <link rel="canonical" href="https://electronf.github.io/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://electronf.github.io/index.html" />
+  <link rel="alternate" hreflang="en" href="https://electronf.github.io/index-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://electronf.github.io/index.html" />
 
-  
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://electronf.github.io/index.html" />
+  <meta property="og:title"       content="Ovide Kuichua — Chercheur en IA | Consultant LLM" />
+  <meta property="og:description" content="Doctorant à Polytechnique Montréal. Recherche sur la calibration LLM, l'évaluation automatique et l'IA médicale. Consultant disponible." />
+  <meta property="og:image"       content="https://electronf.github.io/photo.jpg" />
+  <meta property="og:locale"      content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ovide Kuichua",
+    "url": "https://electronf.github.io",
+    "image": "https://electronf.github.io/photo.jpg",
+    "jobTitle": "AI Research Scientist & PhD Candidate",
+    "description": "Chercheur en IA spécialisé dans la calibration LLM, l'évaluation automatique (ASAG), le NLP clinique et l'IA médicale.",
+    "affiliation": {"@type": "Organization", "name": "Polytechnique Montréal"},
+    "knowsAbout": ["LLM calibration", "Automated Short Answer Grading", "Clinical NLP", "Medical AI", "Multi-agent Systems"],
+    "sameAs": ["https://linkedin.com/in/ovide-kuichua", "https://www.researchgate.net/profile/Ovide-Kuichua"],
+    "email": "ovide.kuichua@polymtl.ca"
+  }
+  </script>
+
   <style>
     :root {
     --bg: #0d0f14;
@@ -803,10 +814,14 @@
     }
 
   </style>
+
 </head>
 <body>
 
-
+<div style="position:fixed;top:0.85rem;right:1rem;z-index:200;display:flex;gap:0;border:1px solid var(--border);overflow:hidden;">
+  <span style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;padding:0.35rem 0.8rem;background:var(--accent);color:#0d0f14;text-transform:uppercase;">FR</span>
+  <a href="index-en.html" style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;padding:0.35rem 0.8rem;color:var(--text-muted);text-transform:uppercase;text-decoration:none;background:var(--surface);">EN</a>
+</div>
 <script>
 
 // ── PROFIL PERSONNEL ─────────────────────────────────────────
@@ -1020,7 +1035,7 @@ const EDUCATION = [
 const EXPERIENCE = [
   {
     date: "Juin 2025 — Présent",
-    role: "Chercheur en IA — IA médicale",
+    role: "AI Researcher — Medical AI",
     org:  "MedScanPlus · Montréal",
     desc: "Architecture IA end-to-end d'un dispositif médical portable. Avatar 3D conversationnel, fusion de données capteurs cliniques, déploiement FastAPI/Docker/AWS."
   },
@@ -1043,8 +1058,8 @@ const EXPERIENCE = [
     desc: "Cours : Réalité étendue (XR), IA & réseaux de neurones. Cours magistraux, ateliers pratiques, évaluation."
   },
   {
-    date: "Mai 2022 — Jan. 2024",
-    role: "Spécialiste en IA — IA médicale générative",
+    date: "Mai 2023 — Jan. 2024",
+    role: "AI Specialist — Generative Medical AI",
     org:  "Yaba-In · Cameroun",
     desc: "Plateforme de télémédecine IA pour zones rurales. 5 000+ interactions patients, 75% de satisfaction. Détection de biais cliniques, architecture microservices."
   },
@@ -1057,6 +1072,7 @@ const EXPERIENCE = [
 ];
 
 </script>
+
 
 <!-- ════════════════════════════════════════════════════════════
      HTML SQUELETTE — NE PAS MODIFIER
@@ -1077,7 +1093,7 @@ const EXPERIENCE = [
     <p class="hero-tagline" id="hero-tagline"></p>
     <div class="hero-links">
       <a href="#publications" class="btn btn-primary">Publications</a>
-      <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      <a href="travaillez-avec-moi.html" class="btn btn-ghost">Travailler ensemble</a>
     </div>
   </div>
   <div class="hero-right">
@@ -1186,6 +1202,7 @@ const navItems = [
   { label:'Projets',     href:'#projects'      },
   { label:'Parcours',    href:'#parcours'      },
   { label:'Contact',     href:'#contact'       },
+  { label:'Travailler ensemble', href:'travaillez-avec-moi.html'},
 ];
 el('nav-links').innerHTML = navItems.map(n =>
   `<li><a href="${n.href}">${n.label}</a></li>`
@@ -1338,5 +1355,6 @@ html(el('footer-copy'), `© ${CURRENT_YEAR} ${PROFILE.name} — Polytechnique Mo
 html(el('footer-url'),  PROFILE.website);
 
 </script>
+
 </body>
 </html>
