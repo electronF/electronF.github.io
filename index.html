@@ -818,7 +818,7 @@
 </head>
 <body>
 
-<div style="position:fixed;top:0.85rem;right:1rem;z-index:200;display:flex;gap:0;border:1px solid var(--border);overflow:hidden;">
+<div style="position:fixed;top:0.85rem;left:10rem;z-index:200;display:flex;gap:0;border:1px solid var(--border);overflow:hidden;">
   <span style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;padding:0.35rem 0.8rem;background:var(--accent);color:#0d0f14;text-transform:uppercase;">FR</span>
   <a href="index-en.html" style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;padding:0.35rem 0.8rem;color:var(--text-muted);text-transform:uppercase;text-decoration:none;background:var(--surface);">EN</a>
 </div>
@@ -1347,7 +1347,8 @@ html(el('contact-section'), `
   <h2>Travaillons ensemble</h2>
   <p class="contact-sub">Pour toutes collaborations de recherche, questions sur mes travaux, consulting ou opportunités, n'hésitez pas à me contacter.</p>
   <a href="mailto:${PROFILE.email}" class="contact-email">${PROFILE.email}</a> 
-  Ou à consulter notre page de services <a href="travaillez-avec-moi.html" class="btn btn-ghost">Travailler ensemble</a>.
+  <p class="contact-sub"> Ou à consulter notre page de services</p>
+  <a href="travaillez-avec-moi.html" class="btn btn-ghost">Travailler ensemble</a>.
   <div class="social-links">${socials}</div>
 `);
 
