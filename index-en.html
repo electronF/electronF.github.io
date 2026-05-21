@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovide Kuichua — AI Research Scientist | LLM Consultant</title>
+
+  <meta name="description" content="Ovide Kuichua — AI Research Scientist and PhD candidate at Polytechnique Montréal. Expert in LLM calibration, automated grading (ASAG), clinical NLP, medical AI. Available for consulting." />
+  <meta name="keywords" content="Ovide Kuichua, AI research scientist, AI consultant, LLM calibration, automated short answer grading, ASAG, clinical NLP, medical AI, Polytechnique Montreal, machine learning, human-in-the-loop, artificial intelligence consultant" />
+  <meta name="author" content="Ovide Kuichua" />
+  <link rel="canonical" href="https://electronf.github.io/index-en.html" />
+  <link rel="alternate" hreflang="fr" href="https://electronf.github.io/index.html" />
+  <link rel="alternate" hreflang="en" href="https://electronf.github.io/index-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://electronf.github.io/index.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://electronf.github.io/index-en.html" />
+  <meta property="og:title"       content="Ovide Kuichua — AI Research Scientist | LLM Consultant" />
+  <meta property="og:description" content="PhD candidate at Polytechnique Montréal. Research on LLM calibration, automated short answer grading and medical AI. Available for consulting." />
+  <meta property="og:image"       content="https://electronf.github.io/photo.jpg" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:locale:alternate" content="fr_CA" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ovide Kuichua",
+    "url": "https://electronf.github.io",
+    "image": "https://electronf.github.io/photo.jpg",
+    "jobTitle": "AI Research Scientist & PhD Candidate",
+    "description": "AI Research Scientist specializing in LLM calibration, automated short answer grading (ASAG), clinical NLP and medical AI.",
+    "affiliation": {"@type": "Organization", "name": "Polytechnique Montréal"},
+    "knowsAbout": ["LLM calibration", "Automated Short Answer Grading", "Clinical NLP", "Medical AI", "Multi-agent Systems"],
+    "sameAs": ["https://linkedin.com/in/ovide-kuichua", "https://www.researchgate.net/profile/Ovide-Kuichua"],
+    "email": "ovide.kuichua@polymtl.ca"
+  }
+  </script>
+
+  <style>
+    :root {
+    --bg: #0d0f14;
+    --surface: #141720;
+    --border: #1f2433;
+    --accent: #c8a96e;
+    --accent-dim: rgba(200, 169, 110, 0.12);
+    --text: #e8e4dc;
+    --text-dim: #8a8a9a;
+    --text-muted: #4a4a5a;
+    --blue: #5b8db8;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+    }
+    
+    /* NAV */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 4rem;
+        background: rgba(13, 15, 20, 0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+        font-family: "DM Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+    }
+    .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+    }
+    .nav-links a {
+        font-family: "DM Mono", monospace;
+        font-size: 0.66rem;
+        color: var(--text-dim);
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+    }
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+    
+    /* HERO */
+    #hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        z-index: 1;
+    }
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8rem 3rem 4rem 6rem;
+    }
+    .hero-tag {
+        font-family: "DM Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--accent);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .hero-tag::before {
+        content: "";
+        display: block;
+        width: 2rem;
+        height: 1px;
+        background: var(--accent);
+    }
+    h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.8rem, 4vw, 4.5rem);
+        line-height: 1.1;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+    }
+    h1 em {
+        font-style: italic;
+        color: var(--accent);
+    }
+    .hero-subtitle {
+        font-size: 0.95rem;
+        color: var(--text-dim);
+        max-width: 44ch;
+        margin-bottom: 0.6rem;
+        line-height: 1.85;
+    }
+    .hero-tagline {
+        font-family: "DM Mono", monospace;
+        font-size: 0.67rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.04em;
+        max-width: 44ch;
+        line-height: 1.7;
+    }
+    .hero-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.72rem 1.5rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 2px;
+        transition: all 0.2s;
+    }
+    .btn-primary {
+        background: var(--accent);
+        color: #0d0f14;
+    }
+    .btn-primary:hover {
+        background: #d4ba82;
+        transform: translateY(-1px);
+    }
+    .btn-ghost {
+        border: 1px solid var(--border);
+        color: var(--text-dim);
+    }
+    .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    
+    /* PHOTO */
+    .hero-right {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-top: 6rem;
+        overflow: hidden;
+    }
+    .hero-right::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        right: -5%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(circle, rgba(200, 169, 110, 0.07) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    .photo-frame {
+        position: relative;
+        width: 320px;
+        height: 400px;
+    }
+    .photo-frame::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        right: 12px;
+        bottom: 12px;
+        border: 1px solid var(--accent);
+        opacity: 0.35;
+        z-index: 0;
+    }
+    .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+        position: relative;
+        z-index: 1;
+        filter: grayscale(20%) contrast(1.05);
+    }
+    .photo-placeholder {
+        width: 100%;
+        height: 100%;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        position: relative;
+        z-index: 1;
+        color: var(--text-muted);
+    }
+    
+    /* SECTIONS */
+    .section-wrap {
+        position: relative;
+        z-index: 1;
+        padding: 5.5rem 6rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .section-divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+    .section-label {
+        font-family: "DM Mono", monospace;
+        font-size: 0.68rem;
+        color: var(--accent);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 0.7rem;
+    }
+    h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        font-weight: 700;
+        margin-bottom: 2.8rem;
+        line-height: 1.2;
+    }
+    
+    /* ABOUT */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 5rem;
+        align-items: start;
+    }
+    .about-text p {
+        color: var(--text-dim);
+        margin-bottom: 1.1rem;
+        font-size: 1rem;
+    }
+    .about-text strong {
+        color: var(--text);
+        font-weight: 500;
+    }
+    .about-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+    }
+    .tag {
+        font-family: "DM Mono", monospace;
+        font-size: 0.64rem;
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+        padding: 0.28rem 0.65rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+    .about-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+    }
+    .stat-block {
+        border-left: 2px solid var(--accent);
+        padding-left: 1.4rem;
+    }
+    .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 0.3rem;
+    }
+    .stat-label {
+        font-family: "DM Mono", monospace;
+        font-size: 0.66rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
+    }
+    .affil-section-label {
+        font-family: "DM Mono", monospace;
+        font-size: 0.66rem;
+        color: var(--text-muted);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    .affil-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+    .affil-pill {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 0.55rem 1.1rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.67rem;
+        color: var(--text-dim);
+        letter-spacing: 0.07em;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .affil-pill span {
+        color: var(--accent);
+    }
+    
+    /* PUBLICATIONS */
+    .pub-filters {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+    .filter-btn {
+        font-family: "DM Mono", monospace;
+        font-size: 0.66rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.4rem 1rem;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    .pub-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .pub-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        padding: 1.8rem 2.2rem;
+        transition: background 0.2s;
+    }
+    .pub-card[data-status="accepted"] {
+        border-left-color: var(--blue);
+    }
+    .pub-card:hover {
+        background: rgba(200, 169, 110, 0.03);
+    }
+    .pub-card.hidden {
+        display: none;
+    }
+    .pub-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    .pub-venue {
+        font-family: "DM Mono", monospace;
+        font-size: 0.67rem;
+        color: var(--accent);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+    .pub-card[data-status="accepted"] .pub-venue {
+        color: var(--blue);
+    }
+    .pub-badge {
+        font-family: "DM Mono", monospace;
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 2px;
+        white-space: nowrap;
+    }
+    .badge-published {
+        background: rgba(200, 169, 110, 0.15);
+        color: var(--accent);
+    }
+    .badge-accepted {
+        background: rgba(91, 141, 184, 0.15);
+        color: var(--blue);
+    }
+    .pub-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+        font-weight: 400;
+    }
+    .pub-authors {
+        font-size: 0.83rem;
+        color: var(--text-muted);
+        margin-bottom: 0.8rem;
+    }
+    .pub-authors strong {
+        color: var(--text-dim);
+        font-weight: 500;
+    }
+    .pub-abstract {
+        font-size: 0.84rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        border-top: 1px solid var(--border);
+        padding-top: 0.9rem;
+    }
+    .pub-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+    .pub-link {
+        font-family: "DM Mono", monospace;
+        font-size: 0.67rem;
+        color: var(--text-dim);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1px;
+        transition: all 0.2s;
+    }
+    .pub-link:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+    }
+    
+    /* TALKS */
+    .talks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+    .talk-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 1.6rem;
+        transition: border-color 0.2s;
+    }
+    .talk-card:hover {
+        border-color: var(--text-muted);
+    }
+    .talk-card.award-card {
+        border-left: 3px solid var(--accent);
+    }
+    .talk-type {
+        font-family: "DM Mono", monospace;
+        font-size: 0.62rem;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.7rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .talk-type::before {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 1px;
+        background: var(--accent);
+    }
+    .talk-title {
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        line-height: 1.4;
+    }
+    .talk-detail {
+        font-family: "DM Mono", monospace;
+        font-size: 0.68rem;
+        color: var(--text-muted);
+    }
+    .talk-desc {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.6rem;
+        line-height: 1.6;
+    }
+    
+    /* PROJECTS */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+    .project-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 1.8rem;
+        transition: border-color 0.2s;
+    }
+    .project-card:hover {
+        border-color: var(--text-muted);
+    }
+    .project-era {
+        font-family: "DM Mono", monospace;
+        font-size: 0.62rem;
+        color: var(--text-muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+    }
+    .project-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+        font-weight: 400;
+    }
+    .project-desc {
+        font-size: 0.83rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+    }
+    .project-award {
+        margin-top: 0.8rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.64rem;
+        color: var(--accent);
+        line-height: 1.5;
+    }
+    
+    /* EXPERIENCE / TIMELINE */
+    .exp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    .exp-col-title {
+        font-family: "DM Mono", monospace;
+        font-size: 0.67rem;
+        color: var(--text-muted);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid var(--border);
+    }
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        bottom: 0;
+        width: 1px;
+        background: var(--border);
+    }
+    .timeline-item {
+        padding-left: 2.5rem;
+        padding-bottom: 2.5rem;
+        position: relative;
+    }
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 0.45rem;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        border: 1px solid var(--accent);
+        background: var(--bg);
+    }
+    .timeline-date {
+        font-family: "DM Mono", monospace;
+        font-size: 0.64rem;
+        color: var(--accent);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.3rem;
+    }
+    .timeline-role {
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 0.15rem;
+    }
+    .timeline-org {
+        font-family: "DM Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--text-dim);
+        margin-bottom: 0.5rem;
+    }
+    .timeline-desc {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 38ch;
+    }
+    .timeline-highlight {
+        color: var(--accent);
+        font-weight: 500;
+    }
+    
+    /* CONTACT */
+    #contact-section {
+        text-align: center;
+    }
+    .contact-sub {
+        color: var(--text-dim);
+        max-width: 45ch;
+        margin: 0 auto 2.5rem;
+        font-size: 0.95rem;
+    }
+    .contact-email {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(200, 169, 110, 0.3);
+        padding-bottom: 0.3rem;
+        transition: border-color 0.2s;
+    }
+    .contact-email:hover {
+        border-color: var(--accent);
+    }
+    .social-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .social-link {
+        font-family: "DM Mono", monospace;
+        font-size: 0.67rem;
+        color: var(--text-muted);
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid var(--border);
+        padding: 0.55rem 1.1rem;
+        transition: all 0.2s;
+    }
+    .social-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    
+    /* FOOTER */
+    footer {
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid var(--border);
+        padding: 1.8rem 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    footer p {
+        font-family: "DM Mono", monospace;
+        font-size: 0.67rem;
+        color: var(--text-muted);
+        letter-spacing: 0.05em;
+    }
+    
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(22px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .hero-left > * {
+        animation: fadeUp 0.7s ease both;
+    }
+    .hero-tag {
+        animation-delay: 0.1s;
+    }
+    h1 {
+        animation-delay: 0.25s;
+    }
+    .hero-subtitle {
+        animation-delay: 0.35s;
+    }
+    .hero-tagline {
+        animation-delay: 0.42s;
+    }
+    .hero-links {
+        animation-delay: 0.52s;
+    }
+    .hero-right {
+        animation: fadeUp 0.9s 0.3s ease both;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        nav {
+            padding: 1rem 1.5rem;
+        }
+        .nav-links {
+            gap: 1rem;
+        }
+        #hero {
+            grid-template-columns: 1fr;
+        }
+        .hero-left {
+            padding: 7rem 2rem 2rem;
+        }
+        .hero-right {
+            padding: 2rem;
+            justify-content: flex-start;
+        }
+        .photo-frame {
+            width: 220px;
+            height: 280px;
+        }
+        .section-wrap {
+            padding: 4rem 2rem;
+        }
+        .about-grid,
+        .exp-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        footer {
+            padding: 1.5rem 2rem;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+        }
+    }
+
+  </style>
+
+</head>
+<body>
+
+<!-- LANG SWITCHER -->
+<div style="position:fixed;top:0.85rem;right:1rem;z-index:200;display:flex;gap:0;border:1px solid var(--border);overflow:hidden;">
+  <a href="index.html" style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;padding:0.35rem 0.8rem;color:var(--text-muted);text-transform:uppercase;text-decoration:none;background:var(--surface);">FR</a>
+  <span style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;padding:0.35rem 0.8rem;background:var(--accent);color:#0d0f14;text-transform:uppercase;">EN</span>
+</div>
+<script>
+
+// ── PROFIL PERSONNEL ─────────────────────────────────────────
+const PROFILE = {
+  name:       "Ovide Kuichua",
+  firstLine:  "Ovide",
+  secondLine: "Kuichua",
+  tagline:    "PhD Researcher · Polytechnique Montréal",
+  subtitle:   "AI Research Scientist specializing in reliable AI systems for data-scarce domains — education, medical, clinical NLP, multilingual.",
+  punchline:  "I make LLMs accurate with 95% less human annotation.\nNo GPU. No fine-tuning. Deployed in production.",
+  photo:      "photo.jpg",
+  email:      "ovide.kuichua@polymtl.ca",
+  website:    "electronf.github.io",
+  // Année de début PhD pour calcul automatique des années d'expérience
+  phdStart:   2022,
+  // Année de début en développement logiciel (freelance Python)
+  devStart:   2016,
+
+  // Paragraphes de la section "À propos" (HTML autorisé)
+  about: [
+    `I am a PhD candidate at the <strong>Department of Computer and Software Engineering at Polytechnique Montréal</strong>, supervised by Prof. Michel Desmarais and Prof. Chahé Nerguizian. My thesis focuses on Automated Short Answer Grading (ASAG): calibrating LLM outputs question by question, with 15 human examples or fewer.`,
+    `The core problem I solve: <strong>how do you make a large language model reliably accurate on a specific task when you have almost no labeled data?</strong> This is not just an EdTech challenge — it is the central bottleneck in clinical NLP, legal document analysis, and any regulated domain where annotation is expensive and errors have consequences.`,
+    `In parallel, I design the AI layer of a portable medical device at <strong>MedScanPlus</strong>, and lead a multi-agent system for clinical intervention plan generation at <strong>Eduplan Solutions</strong>. I also built an AI telemedicine platform deployed in rural Cameroon — <strong>5,000+ patient interactions</strong>, 75% satisfaction rate.`
+  ],
+
+  // Compétences techniques — badges
+  skills: [
+    "PyTorch", "LangChain / LangGraph", "Multi-agent Systems",
+    "Clinical NLP", "AWS SageMaker", "Docker · Kubernetes",
+    "FastAPI", "MLflow", "Signal Processing", "Flutter", "React.js"
+  ],
+
+  // Liens sociaux
+  socials: [
+    { label: "LinkedIn",      url: "https://linkedin.com/in/ovide-kuichua" },
+    { label: "ResearchGate",  url: "https://www.researchgate.net/profile/Ovide-Kuichua" },
+    { label: "PolyPublié",    url: "https://www.publications.polymtl.ca/view/person/Kuichua_Kamdem,_Ovide_Bertrand.html" },
+    { label: "OSF — Code",    url: "https://osf.io/cs3nv/" }
+  ]
+};
+
+// ── AFFILIATIONS ──────────────────────────────────────────────
+// icon: emoji ou texte court
+const AFFILIATIONS = [
+  { icon: "◆", label: "Polytechnique Montréal — PhD Computer Science" },
+  { icon: "◆", label: "IVADO — Research Student" },
+  { icon: "◆", label: "MedScanPlus — AI Researcher" },
+  { icon: "◆", label: "Eduplan Solutions — Lead AI Architect" },
+  { icon: "◆", label: "OBIA — Student Committee" },
+];
+
+// ── STATS MANUELLES ──────────────────────────────────────────
+// Les stats calculables (nb publications, années expérience) sont
+// calculées automatiquement. Ajouter ici les stats statiques.
+const EXTRA_STATS = [
+  { value: "5K+",  label: "Patient interactions\non deployed AI platform" },
+  { value: "95%",  label: "Annotation reduction\nvs. classical methods" },
+];
+
+// ── PUBLICATIONS ──────────────────────────────────────────────
+// status: "published" | "accepted"
+// Ajouter un objet = nouvelle carte apparaît automatiquement
+// Les compteurs (nb articles, années) se recalculent seuls
+const PUBLICATIONS = [
+  {
+    status:  "accepted",
+    year:    2026,
+    venue:   "UMAP '26 — Gothenburg, Suède · Juin 2026",
+    title:   "Instructor-Centered Per-Question Adaptation for Short Answer Grading Using LLM Scores and Informative Sampling",
+    authors: ["Ovide Kuichua", "Michel Desmarais", "Arman Bakhtiari", "Chahé Nerguizian"],
+    abstract:"Approach combining LLMs (Claude 3.5 Sonnet, GPT-4o, Gemini 2.0 Flash) with per-question Gaussian regression. RMSE 0.397 on Mohler — 45% improvement over state-of-the-art — requiring 4 to 5 times fewer labeled examples than fine-tuning.",
+    links: [
+      { label: "DOI",          url: "https://doi.org/10.1145/3774935.3806189" },
+      { label: "Code & données", url: "https://osf.io/cs3nv/overview?view_only=4756bae0cdd44190b2ac21cd90eb467e" }
+    ]
+  },
+  {
+    status:  "accepted",
+    year:    2026,
+    venue:   "L@S '26 — Séoul, Corée du Sud · Juin–Juillet 2026",
+    title:   "Uncertainty-Guided Sampling for LLM Calibration in Automated Short Answer Grading",
+    authors: ["Ovide Kuichua", "et al."],
+    abstract:"Two-stage uncertainty-guided sampling method. 30% RMSE improvement (0.501 vs 0.717) with 33%–67% fewer annotated examples.",
+    links: [
+      { label: "Code & données", url: "https://osf.io/gwnfm/overview?view_only=a9f8153c8fe54a92b5c7608275e1fcbd" }
+    ]
+  },
+  {
+    status:  "published",
+    year:    2025,
+    venue:   "EDM 2025 — Palerme, Italie · Juillet 2025",
+    title:   "Short Answer Grading with Sentence Similarity and a Few Given Grades",
+    authors: ["Michel Desmarais", "Arman Bakhtiari", "Ovide Kuichua", "Samira Chiny Folefack Temfack", "Chahé Nerguizian"],
+    abstract:"Per-question calibration via Gaussian regression on semantic similarity scores with only 15 examples. RMSE 0.717 on Mohler. 18th International Conference on Educational Data Mining.",
+    links: [
+      { label: "Proceedings", url: "https://educationaldatamining.org/EDM2025/proceedings/2025.EDM.short-papers.124/" }
+    ]
+  }
+];
+
+// ── TALKS, PRIX & ENGAGEMENTS ─────────────────────────────────
+// type: "talk" | "award" | "committee" | "hackathon" | "affiliation" | "community"
+const TALKS = [
+  {
+    type:   "talk",
+    title:  "Conference — Fondation Inspiré",
+    event:  "Inspiré — Fondation afrocaribéenne",
+    detail: "Montréal · Juin 2025",
+    desc:   "Talk for the Fondation Inspiré, dedicated to building the next generation of Afro-Caribbean leaders."
+  },
+  {
+    type:   "award",
+    title:  "Award — Best Oral Presentation",
+    event:  "Présentation académique",
+    detail: "Polytechnique Montréal",
+    desc:   "Award obtained for an oral research presentation."
+  },
+  {
+    type:   "committee",
+    title:  "Student Committee Member — OBIA",
+    event:  "OBIA",
+    detail: "Montréal · Ongoing",
+    desc:   "Active member of the OBIA student committee."
+  },
+  {
+    type:   "affiliation",
+    title:  "Étudiant IVADO",
+    event:  "Institut de Valorisation des Données",
+    detail: "Montréal · Ongoing",
+    desc:   "Membre de l'écosystème de recherche en IA de l'IVADO, Montréal."
+  },
+  {
+    type:   "hackathon",
+    title:  "3ème place — ARVR Africa Hackathon",
+    event:  "ARVR Africa",
+    detail: "Afrique",
+    desc:   "Award at the pan-African hackathon dedicated to augmented and virtual reality technologies."
+  },
+  {
+    type:   "community",
+    title:  "Founder — Cameroonian Chapter of CodeChef",
+    event:  "CodeChef Cameroun",
+    detail: "Cameroun",
+    desc:   "Founded and developed the Cameroonian chapter of CodeChef, promoting competitive programming."
+  }
+];
+
+// ── PROJETS DE RECHERCHE ──────────────────────────────────────
+// award: optionnel — affiche une ligne dorée si présent
+const PROJECTS = [
+  {
+    era:   "PhD · 2022–present",
+    title: "LLM Calibration for Automated Short Answer Grading (ASAG)",
+    desc:  "Per-question calibration system via Gaussian regression on LLM scores. 53% error reduction on multilingual corpus with only 15 examples. Evaluated on GPT-4o, Claude 3.5 Sonnet, Gemini 2.0 Flash."
+  },
+  {
+    era:   "MedScanPlus · 2025–present",
+    title: "All-in-One Portable Medical Device",
+    desc:  "AI layer integrating ECG, SpO2, auscultation, blood/urine analysis. 3D conversational avatar simulating a medical consultation, with handoff pipeline to human physician. Deployed via FastAPI/Docker."
+  },
+  {
+    era:   "Yaba-In · 2023–2024",
+    title: "AI Telemedicine for Rural African Communities",
+    desc:  "Generative triage platform deployed in rural Cameroon. 5,000+ patient interactions, 75% post-conversation satisfaction. No specialized infrastructure. Integrated clinical bias detection."
+  },
+  {
+    era:   "Masters · BEEMo. Lab · 2021–2022",
+    title: "Cameroonian Sign Language ↔ English Translator",
+    desc:  "Three NLP models: CSL→glosses→English, English→glosses→CSL, real-time 3D animation. Original corpus collected locally. Mobile app and desktop software delivered.",
+    award: "🏆 Best Masters 2020–2021 · Excellence Distinction — First ever in the entire Faculty of Science and Technology at Université des Montagnes"
+  },
+  {
+    era:   "Bachelor's · BEEMo. Lab · 2018–2019",
+    title: "Multiparametric Monitor & Virtual Medical Assistant",
+    desc:  "Built a monitor measuring ECG, SpO2, blood pressure, remotely controllable via GSM/WiFi. Virtual medical assistant integrating Google Assistant for hospital environments."
+  },
+  {
+    era:   "Eduplan Solutions · 2024–present",
+    title: "Multi-Agent System for Clinical Intervention Plans",
+    desc:  "LangGraph multi-agent architecture for clinical educational intervention plan generation. 40%+ inference cost reduction through prompt optimization and LLM right-sizing. Full MLOps with A/B testing."
+  }
+];
+
+// ── FORMATION ─────────────────────────────────────────────────
+const EDUCATION = [
+  {
+    date:  "2022 — Present",
+    role:  "PhD in Computer Science",
+    org:   "Polytechnique Montréal · Montréal, Canada",
+    desc:  "Thesis on Automated Short Answer Grading (ASAG) via LLMs and lightweight adaptation.",
+    extra: "Supervisors: Prof. Michel Desmarais & Prof. Chahé Nerguizian."
+  },
+  {
+    date:  "2019 — 2022",
+    role:  "Masters in Bioengineering & Biomedical Engineering",
+    org:   "Université des Montagnes · Cameroun",
+    desc:  "Supervised by Prof. Tiam Pasclin & Dr. Fouste Momo.",
+    extra: "Best Masters 2020–2021, excellence distinction — first award of this kind in the entire Faculty of Science and Technology.",
+    highlight: true
+  },
+  {
+    date:  "2016 — 2019",
+    role:  "Bachelor's in Bioengineering & Biomedical Engineering",
+    org:   "Université des Montagnes · Cameroun",
+    desc:  "Supervised by Prof. Tiam Pasclin & Dr. Youssouffa Moamadu.",
+    extra: "Projects: multiparametric monitor, intelligent virtual medical assistant."
+  }
+];
+
+// ── EXPÉRIENCE ────────────────────────────────────────────────
+const EXPERIENCE = [
+  {
+    date: "June 2025 — Present",
+    role: "AI Researcher — Medical AI",
+    org:  "MedScanPlus · Montréal",
+    desc: "End-to-end AI architecture for a portable medical device. 3D conversational avatar, clinical sensor data fusion, FastAPI/Docker/AWS deployment."
+  },
+  {
+    date: "Jan. 2025 — Present",
+    role: "Teaching Assistant — LOG 6308",
+    org:  "Polytechnique Montréal",
+    desc: "Recommender Systems course (Collaborative Filtering, neural networks, Bayesian approaches). Lab design, student mentoring, grading."
+  },
+  {
+    date: "Jan. 2024 — Present",
+    role: "Lead AI Architect — Multi-Agent Systems",
+    org:  "Eduplan Solutions · Montréal",
+    desc: "NLP multi-agent system for clinical intervention plans. MLOps, A/B testing, FinOps — 40%+ inference cost reduction."
+  },
+  {
+    date: "Dec. 2023 — Present",
+    role: "Lecturer",
+    org:  "Université des Montagnes · Cameroun",
+    desc: "Courses: Extended Reality (XR), AI & neural networks. Lectures, practical workshops, assessment."
+  },
+  {
+    date: "Mai 2023 — Jan. 2024",
+    role: "AI Specialist — Generative Medical AI",
+    org:  "Yaba-In · Cameroun",
+    desc: "AI telemedicine platform for rural areas. 5,000+ patient interactions, 75% satisfaction. Clinical bias detection, microservices architecture."
+  }
+];
+
+</script>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     HTML SQUELETTE — NE PAS MODIFIER
+     ════════════════════════════════════════════════════════════ -->
+
+<!-- NAV (généré par JS) -->
+<nav>
+  <span class="nav-logo" id="nav-logo"></span>
+  <ul class="nav-links" id="nav-links"></ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="max-width:100%;padding:0;position:relative;z-index:1;">
+  <div class="hero-left">
+    <p class="hero-tag" id="hero-tag"></p>
+    <h1 id="hero-h1"></h1>
+    <p class="hero-subtitle" id="hero-subtitle"></p>
+    <p class="hero-tagline" id="hero-tagline"></p>
+    <div class="hero-links">
+      <a href="#publications" class="btn btn-primary">Publications</a>
+      <a href="work-with-me.html" class="btn btn-ghost">Work With Me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-frame" id="photo-frame"></div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ABOUT -->
+<div class="section-wrap" id="about">
+  <p class="section-label">01 — About</p>
+  <h2>AI Researcher for<br/>critical domains</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <div id="about-paragraphs"></div>
+      <div class="about-tags" id="about-tags"></div>
+    </div>
+    <div class="about-stats" id="about-stats"></div>
+  </div>
+  <p class="affil-section-label">Affiliations</p>
+  <div class="affil-grid" id="affil-grid"></div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- PUBLICATIONS -->
+<div class="section-wrap" id="publications">
+  <p class="section-label">02 — Publications</p>
+  <h2>Research papers</h2>
+  <div class="pub-filters">
+    <button class="filter-btn active" onclick="filterPubs('all',this)">All</button>
+    <button class="filter-btn" onclick="filterPubs('published',this)">✦ Published</button>
+    <button class="filter-btn" onclick="filterPubs('accepted',this)">● Accepted</button>
+  </div>
+  <div class="pub-list" id="pub-list"></div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- TALKS -->
+<div class="section-wrap" id="talks">
+  <p class="section-label">03 — Talks & Engagements</p>
+  <h2>Conferences, awards<br/>& community</h2>
+  <div class="talks-grid" id="talks-grid"></div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- PROJECTS -->
+<div class="section-wrap" id="projects">
+  <p class="section-label">04 — Research Projects</p>
+  <h2>Notable works</h2>
+  <div class="projects-grid" id="projects-grid"></div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- PARCOURS -->
+<div class="section-wrap" id="parcours">
+  <p class="section-label">05 — Background</p>
+  <h2>Education &<br/>experience</h2>
+  <div class="exp-grid">
+    <div>
+      <div class="exp-col-title">Education</div>
+      <div class="timeline" id="education-timeline"></div>
+    </div>
+    <div>
+      <div class="exp-col-title">Experience (research & teaching)</div>
+      <div class="timeline" id="experience-timeline"></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- CONTACT -->
+<div class="section-wrap" id="contact">
+  <div id="contact-section"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p id="footer-copy"></p>
+  <p id="footer-url"></p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════
+     MOTEUR DE RENDU — NE PAS MODIFIER
+     ════════════════════════════════════════════════════════════ -->
+<script>
+
+const CURRENT_YEAR = new Date().getFullYear();
+
+// ── Helpers ──────────────────────────────────────────────────
+const el  = id => document.getElementById(id);
+const mk  = tag => document.createElement(tag);
+const html = (el, h) => { el.innerHTML = h; };
+
+// ── NAV ──────────────────────────────────────────────────────
+html(el('nav-logo'), PROFILE.name);
+const navItems = [
+  { label:'About',       href:'#about'        },
+  { label:'Publications',href:'#publications'  },
+  { label:'Talks',       href:'#talks'         },
+  { label:'Projects',    href:'#projects'      },
+  { label:'Background',  href:'#parcours'      },
+  { label:'Contact',     href:'#contact'       },
+  { label:'Work With Me',href:'work-with-me.html'},
+];
+el('nav-links').innerHTML = navItems.map(n =>
+  `<li><a href="${n.href}">${n.label}</a></li>`
+).join('');
+
+// ── HERO ─────────────────────────────────────────────────────
+html(el('hero-tag'),      PROFILE.tagline);
+html(el('hero-h1'),       `${PROFILE.firstLine}<br/><em>${PROFILE.secondLine}</em>`);
+html(el('hero-subtitle'), PROFILE.subtitle);
+html(el('hero-tagline'),  PROFILE.punchline.replace('\n','<br/>'));
+const img = document.createElement('img');
+img.src = PROFILE.photo;
+img.alt = PROFILE.name;
+img.onerror = function() {
+  this.parentElement.innerHTML =
+    '<div class="photo-placeholder">' +
+    '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4a4a5a" stroke-width="1">' +
+    '<circle cx="12" cy="8" r="4"/>' +
+    '<path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>' +
+    '</svg></div>';
+};
+el('photo-frame').appendChild(img);
+
+// ── ABOUT — paragraphes ───────────────────────────────────────
+el('about-paragraphs').innerHTML = PROFILE.about.map(p => `<p>${p}</p>`).join('');
+
+// ── ABOUT — skills tags ───────────────────────────────────────
+el('about-tags').innerHTML = PROFILE.skills.map(s => `<span class="tag">${s}</span>`).join('');
+
+// ── STATS (auto-calculées + manuelles) ───────────────────────
+function computeStats() {
+  const pubYears = [...new Set(PUBLICATIONS.map(p => p.year))].sort();
+  const pubYearRange = pubYears.length > 1
+    ? `${pubYears[0]}–${pubYears[pubYears.length-1]}`
+    : `${pubYears[0]}`;
+  const yearsExp = CURRENT_YEAR - PROFILE.devStart;
+
+  return [
+    {
+      value: PUBLICATIONS.length.toString(),
+      label: `Research papers\n(${pubYearRange})`
+    },
+    {
+      value: `${yearsExp}+`,
+      label: `Years in AI systems\nand software engineering`
+    },
+    ...EXTRA_STATS
+  ];
+}
+
+el('about-stats').innerHTML = computeStats().map(s => `
+  <div class="stat-block">
+    <div class="stat-num">${s.value}</div>
+    <div class="stat-label">${s.label.replace('\n','<br/>')}</div>
+  </div>`).join('');
+
+// ── AFFILIATIONS ──────────────────────────────────────────────
+el('affil-grid').innerHTML = AFFILIATIONS.map(a =>
+  `<div class="affil-pill"><span>${a.icon}</span> ${a.label}</div>`
+).join('');
+
+// ── PUBLICATIONS ──────────────────────────────────────────────
+function renderPubs() {
+  el('pub-list').innerHTML = PUBLICATIONS.map(p => {
+    const badgeClass = p.status === 'published' ? 'badge-published' : 'badge-accepted';
+    const badgeLabel = p.status === 'published' ? '✦ Published' : '● Accepted';
+    const authors    = p.authors.map(a =>
+      a === 'Ovide Kuichua' ? `<strong>${a}</strong>` : a
+    ).join(', ');
+    const links = p.links.map(l =>
+      `<a href="${l.url}" target="_blank" class="pub-link">↗ ${l.label}</a>`
+    ).join('');
+    return `
+      <div class="pub-card" data-status="${p.status}">
+        <div class="pub-top">
+          <div class="pub-venue">${p.venue}</div>
+          <span class="pub-badge ${badgeClass}">${badgeLabel}</span>
+        </div>
+        <div class="pub-title">${p.title}</div>
+        <div class="pub-authors">${authors}</div>
+        <div class="pub-abstract">${p.abstract}</div>
+        <div class="pub-links">${links}</div>
+      </div>`;
+  }).join('');
+}
+
+function filterPubs(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pub-card').forEach(card =>
+    card.classList.toggle('hidden', filter !== 'all' && card.dataset.status !== filter)
+  );
+}
+
+renderPubs();
+
+// ── TALKS ────────────────────────────────────────────────────
+const TALK_ICONS   = { talk:'🎤', award:'🏆', committee:'🤝', hackathon:'⚡', affiliation:'◆', community:'🌍' };
+const TALK_LABELS  = { talk:'Talk', award:'Award', committee:'Committee', hackathon:'Hackathon', affiliation:'Affiliation', community:'Community' };
+
+el('talks-grid').innerHTML = TALKS.map(t => `
+  <div class="talk-card ${t.type === 'award' ? 'award-card' : ''}">
+    <div class="talk-type">${TALK_ICONS[t.type]||'◆'} ${TALK_LABELS[t.type]||t.type}</div>
+    <div class="talk-title">${t.title}</div>
+    <div class="talk-detail">${t.event} · ${t.detail}</div>
+    ${t.desc ? `<div class="talk-desc">${t.desc}</div>` : ''}
+  </div>`).join('');
+
+// ── PROJECTS ──────────────────────────────────────────────────
+el('projects-grid').innerHTML = PROJECTS.map(p => `
+  <div class="project-card">
+    <div class="project-era">${p.era}</div>
+    <div class="project-title">${p.title}</div>
+    <div class="project-desc">${p.desc}</div>
+    ${p.award ? `<div class="project-award">${p.award}</div>` : ''}
+  </div>`).join('');
+
+// ── EDUCATION & EXPERIENCE TIMELINES ─────────────────────────
+function timelineItem(item) {
+  return `
+    <div class="timeline-item">
+      <div class="timeline-date">${item.date}</div>
+      <div class="timeline-role">${item.role}</div>
+      <div class="timeline-org">${item.org}</div>
+      <div class="timeline-desc">
+        ${item.desc}
+        ${item.extra ? `<br/><span class="${item.highlight ? 'timeline-highlight' : ''}">${item.extra}</span>` : ''}
+      </div>
+    </div>`;
+}
+
+el('education-timeline').innerHTML  = EDUCATION.map(timelineItem).join('');
+el('experience-timeline').innerHTML = EXPERIENCE.map(timelineItem).join('');
+
+// ── CONTACT ───────────────────────────────────────────────────
+const socials = PROFILE.socials.map(s =>
+  `<a href="${s.url}" target="_blank" class="social-link">${s.label}</a>`
+).join('');
+
+html(el('contact-section'), `
+  <p class="section-label">06 — Contact</p>
+  <h2>Let's work together</h2>
+  <p class="contact-sub">For research collaborations, questions about my work, consulting or opportunities — feel free to reach out.</p>
+  <a href="mailto:${PROFILE.email}" class="contact-email">${PROFILE.email}</a>
+  <div class="social-links">${socials}</div>
+`);
+
+// ── FOOTER ────────────────────────────────────────────────────
+html(el('footer-copy'), `© ${CURRENT_YEAR} ${PROFILE.name} — Polytechnique Montréal`);
+html(el('footer-url'),  PROFILE.website);
+
+</script>
+
+</body>
+</html>
